@@ -1,0 +1,6 @@
+﻿  Source.cpp
+c:\users\kulinich\source\repos\oop 22.05.2019\oop 22.05.2019\source.cpp(35): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+c:\users\kulinich\source\repos\oop 22.05.2019\oop 22.05.2019\source.cpp(71): warning C4244: 'return': conversion from 'const float' to 'int', possible loss of data
+c:\users\kulinich\source\repos\oop 22.05.2019\oop 22.05.2019\source.cpp(75): warning C4244: 'return': conversion from 'const double' to 'int', possible loss of data
+c:\users\kulinich\source\repos\oop 22.05.2019\oop 22.05.2019\source.cpp(99): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  OOP 22.05.2019.vcxproj -> C:\Users\kulinich\source\repos\OOP 22.05.2019\Debug\OOP 22.05.2019.exe
