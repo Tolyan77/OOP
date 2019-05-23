@@ -11,7 +11,7 @@ private:
 	int x;
 	int y;
 	int length;
-	int    width;
+	int width;
 	int collor;
 
 public:
