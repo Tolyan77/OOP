@@ -8,10 +8,13 @@ private:
 	int age;
 	int YearOfBirth;
 	string address;
+	double rating;
 	void calcAge();
 public:
-	Student(string name, int YearOfBirth, string address);
+	Student(string name, int YearOfBirth, string address, double rating);
 	Student();
+	double GetRating();
 	void Fill();
 	void Show();
 };
+
