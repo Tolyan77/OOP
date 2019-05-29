@@ -1,0 +1,6 @@
+﻿  Source.cpp
+  String.cpp
+  Generating Code...
+Source.obj : error LNK2001: unresolved external symbol "public: static int String::count" (?count@String@@2HA)
+String.obj : error LNK2001: unresolved external symbol "public: static int String::count" (?count@String@@2HA)
+D:\Tolyan\╬╬╧\Class\29.05.2019\Debug\29.05.2019.exe : fatal error LNK1120: 1 unresolved externals
