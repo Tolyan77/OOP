@@ -1,0 +1,4 @@
+﻿  Date.cpp
+d:\tolyan\ооп\class\30.05.2019 data\30.05.2019 data\date.cpp(28): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
+d:\tolyan\ооп\class\30.05.2019 data\30.05.2019 data\date.cpp(38): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
+  30.05.2019 DATA.vcxproj -> D:\Tolyan\ООП\Class\30.05.2019 DATA\Debug\30.05.2019 DATA.exe
