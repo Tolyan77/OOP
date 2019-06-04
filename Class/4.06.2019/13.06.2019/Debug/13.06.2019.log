@@ -1,0 +1,6 @@
+﻿  Source.cpp
+  Time.cpp
+  Generating Code...
+d:\tolyan\ооп\home\13.06.2019\13.06.2019\time.cpp(186): warning C4172: returning address of local variable or temporary: tmp
+d:\tolyan\ооп\home\13.06.2019\13.06.2019\time.cpp(200): warning C4172: returning address of local variable or temporary: tmp
+  13.06.2019.vcxproj -> D:\Tolyan\ООП\Home\13.06.2019\Debug\13.06.2019.exe
