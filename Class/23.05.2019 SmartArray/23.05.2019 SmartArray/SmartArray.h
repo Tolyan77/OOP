@@ -1,17 +1,25 @@
 #pragma once
-#include<iostream>
-#include<string>
-using namespace std;
-class SmartArray {
+class SmartArray
+{
 private:
-	int *arr;
+	int **arr;
 	int size;
-public:
-	SmartArray();
-	SmartArray(int value, int newSize);
-	SmartArray(int * array, int newSize);
-	void AddOneArr();
-	void Show();
-	void DeleteIndex();
+	//int col;
+	//int row;
 
-  };
+public:
+
+	SmartArray();
+	SmartArray(int, int, int);
+	~SmartArray();
+	SmartArray(SmartArray&& other);
+	void Show();
+
+	//void Add(int newArr[], int newRow);
+
+	//int Max();
+
+	//int Min();
+
+	operator=(SmartArray && other);
+};

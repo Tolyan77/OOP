@@ -1,58 +1,125 @@
 #include "SmartArray.h"
-SmartArray::SmartArray() {
+#include<iostream>
+
+using namespace std;
+
+SmartArray::SmartArray()
+{
 	arr = nullptr;
-	size = 0;
+	int col = 0;
+	int row = 0;
 }
-SmartArray::SmartArray(int value, int newSize) {
-	size = newSize;
-	arr = new int[size];
-	for (int i = 0; i < size; i++) {
-		arr[i] = value;
-	}
-}
-SmartArray::SmartArray(int * array, int newSize) {
-	size = newSize;
-	arr = new int[size];
-	for (int i = 0; i < size; i++)
+
+SmartArray::SmartArray(int value, int col, int row)
+{
+	arr = new int*[row];
+	for (int i = 0; i < row; i++)
 	{
-		arr[i] = array[i];
+		arr[i] = new int[col];
 	}
+
+	for (int i = 0; i < col; i++)
+	{
+		for (int j = 0; j < row; j++)
+		{
+			arr[i][j] = value;
+		}
+	}
+
+	this->col = col;
+	this->row = row;
+}
+
+SmartArray::~SmartArray()
+{
+	for (int i = 0; i < row; i++)
+	{
+		delete[]arr[i];
+	}
+}
+SmartArray::SmartArray(SmartArray && other)
+{
+	this->arr = other.arr;
+	other.arr = nullptr;
 }
 void SmartArray::Show()
 {
-	for (int i = 0; i < size; i++)
+	for (int i = 0; i < row; i++)
 	{
-		cout << " " << arr[i];
-	}
-}
-void SmartArray::AddOneArr() {
-	int number;
-	int * arrNew = new int[size + 1];
-	cout << "\n\tEnter number :";
-	cin >> number;
-	for (int i = 0; i < size; i++) {
-			arrNew[i] = arr[i];
-	}
-	arrNew[size + 1] = number;
-	delete[]arr;
-	arr = arrNew;
-	size += 1;
-}
-void SmartArray::DeleteIndex() {
-	int index;
-	int * arrNew = new int[size - 1];
-	cout << "\n\tEnter index :";
-	cin >> index;
-	for (int i = 0; i < size; i++) {
-		if (i >= index) {
-			arrNew[i] = arr[i + 1];
+		for (int j = 0; j < col; j++)
+		{
+			cout << arr[i][j] << "\t";
 		}
-		else{
-			arrNew[i] = arr[i];
-		}
+		cout << endl;
 	}
-	delete[]arr;
-	arr = arrNew;
-	size -= 1;
 }
 
+////void SmartArray::Add(int addArr[], int newRow)
+//{
+//	int ** newArr = new int*[row + 1];
+//	for (int i = 0; i < row + 1; i++)
+//	{
+//		newArr[i] = new int[col];
+//	}
+//
+//	for (int i = 0; i < newRow; i++)
+//	{
+//		newArr[i] = arr[i];
+//	}
+//	newArr[newRow] = addArr;
+//	for (int i = newRow; i < row; i++)
+//	{
+//		newArr[i + 1] = arr[i];
+//	}
+//
+//
+//	/*for (int i = 0; i < row+1; i++)
+//	{
+//		for (int j = 0; j < col; j++)
+//		{
+//			cout << newArr[i][j] << "\t";
+//		}
+//		cout << endl;
+//	}
+//*/
+//
+///*arr = new int*[row + 1];
+//for (int i = 0; i < row + 1; i++)
+//{
+//	arr[i] = new int[col];
+//}
+//
+//
+//for (int i = 0; i < row+1; i++)
+//{
+//	arr[i] = newArr[i];
+//}*/
+//	arr = newArr;
+//
+//	this->row++;
+//}
+//
+////int SmartArray::Max()
+//{
+//	return 0;
+//}
+//
+////int SmartArray::Min()
+//{
+//	return 0;
+//}
+SmartArray::operator=(SmartArray && other)
+{
+	if (this == other) 
+		return *this;
+	if (other.arr == nullptr) {
+		arr = nullptr;
+		size = 0;
+	}
+	else{
+		this->arr = other.arr;
+		this->size = other.size;
+		other.arr = nullptr;
+	}
+	return *this;
+}

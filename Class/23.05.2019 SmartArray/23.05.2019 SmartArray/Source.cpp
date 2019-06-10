@@ -1,27 +1,20 @@
 #include<iostream>
 #include"SmartArray.h"
+
 using namespace std;
+
 int main()
 {
-	int arr[5] = { 1,2,3,4,5 };
-	SmartArray Arr(5,5);
-	 Arr.AddOneArr();
-	 Arr.Show();
-	 Arr.DeleteIndex();
 
+	//int arr1[3] = { 2,2,2 };
 
-	/*SmartArray arr(5, 5);
-	void AddOneArr();
-	void Show();
-	void DeleteIndex();
+	//SmartArray arr(1, 3, 3);
 
+	arr.Show();
 
-	
-	SmartArray arr(arrNew, 5);
-	void AddOneArr();
-	void Show();
-	void DeleteIndex();*/
-
+	//arr.Add(arr1, 1);
+	//cout << endl;
+	//arr.Show();
 
 	system("pause");
 	return 0;
