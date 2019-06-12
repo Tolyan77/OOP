@@ -1,0 +1,4 @@
+﻿  Source.cpp
+d:\tolyan\ооп\class\12.06.2019\12.06.2019\source.cpp(6): warning C4326: return type of 'main' should be 'int' instead of 'void'
+d:\tolyan\ооп\class\12.06.2019\12.06.2019\source.cpp(11): warning C4018: '<': signed/unsigned mismatch
+  12.06.2019.vcxproj -> D:\Tolyan\ООП\Class\12.06.2019\Debug\12.06.2019.exe
