@@ -4,6 +4,7 @@ using namespace std;
 SmartArray::SmartArray()
 {
 	arr = nullptr;
+	arrSize = nullptr;
 	int col = 0;
 	int row = 0;
 }
@@ -20,9 +21,9 @@ SmartArray::SmartArray(int value, int col, int row)
 		{
 			arr[i][j] = value;
 			value++;
+			arrSize[i] = j;
 		}
 	}
-
 	this->col = col;
 	this->row = row;
 }
@@ -32,10 +33,12 @@ SmartArray::~SmartArray()
 	{
 		delete[]arr[i];
 	}
+	delete[]arrSize;
 }
 void SmartArray::Show()
 {
-	for (int i = 0; i < row; i++)
+	int g = 0;
+	for (int i = 0; i < arrSize[g]; i++, g++)
 	{
 		for (int j = 0; j < col; j++)
 		{
@@ -105,6 +108,7 @@ void SmartArray::DeleteElem(int NewCol, int NewRow)
 			for (int j = col - 1; j >= 0; j--) {
 				if (i == NewCol && j == NewRow)
 				{
+					arrSize[j] = 0;
 					newArr[i][j] = newArr[i][j + 1];
 					j--;
 				}
