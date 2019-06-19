@@ -21,7 +21,7 @@ SmartArray::SmartArray(int value, int col, int row)
 		{
 			arr[i][j] = value;
 			value++;
-			arrSize[i] = j;
+			//this->arrSize[i] = row;
 		}
 	}
 	this->col = col;
@@ -33,12 +33,12 @@ SmartArray::~SmartArray()
 	{
 		delete[]arr[i];
 	}
-	delete[]arrSize;
+	//delete[]arrSize;
 }
 void SmartArray::Show()
 {
 	int g = 0;
-	for (int i = 0; i < arrSize[g]; i++, g++)
+	for (int i = 0; i < row; i++, g++)
 	{
 		for (int j = 0; j < col; j++)
 		{
@@ -63,8 +63,6 @@ void SmartArray::AddRow(int addArr[], int newRow)
 	{
 		newArr[i + 1] = arr[i];
 	}
-
-
 	/*for (int i = 0; i < row+1; i++)
 	{
 		for (int j = 0; j < col; j++)
@@ -90,6 +88,21 @@ for (int i = 0; i < row+1; i++)
 	this->row++;
 }
 
+void SmartArray::DeleteRow( int newRow)
+{
+	int** newArr = new int* [row - 1];
+	for (int i = 0; i < row; i++)
+	{
+		if (i < newRow)
+			newArr[i] = arr[i];
+		else
+			newArr[i] = arr[i + 1];
+	}
+	arr = newArr;
+	this->row--;
+}
+
+
 void SmartArray::DeleteElem(int NewCol, int NewRow)
 {
 	if (NewCol > col || NewRow > row) {
@@ -101,20 +114,21 @@ void SmartArray::DeleteElem(int NewCol, int NewRow)
 		int** newArr = new int* [row];
 		for (int i = 0; i < row; i++)
 		{
-			newArr[i] = arr[i];
-		}
-		for (int i = 0; i < row; i++)
-		{
-			for (int j = col - 1; j >= 0; j--) {
-				if (i == NewCol && j == NewRow)
-				{
-					arrSize[j] = 0;
-					newArr[i][j] = newArr[i][j + 1];
-					j--;
+			if (NewRow != row)
+				newArr[i] = arr[i];
+			else
+			{
+				for (int j = col - 1; j >= 0; j--) {
+				
+					if (NewCol == col)
+					{
+						//delete[] * arrSize;
+					}
+					newArr[i][j] = newArr[i][j];
 				}
-				 newArr[i][j] = newArr[i][j];
 			}
 		}
+		
 		arr = newArr;
 	}
 }

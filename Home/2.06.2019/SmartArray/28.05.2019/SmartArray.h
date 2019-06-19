@@ -12,5 +12,6 @@ public:
 
 	void Show();
 	void AddRow(int newArr[], int newRow);
+	void DeleteRow( int newRow);
 	void DeleteElem(int NewCol, int NewRow);
 };
