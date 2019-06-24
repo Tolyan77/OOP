@@ -1,0 +1,20 @@
+﻿  Car.cpp
+d:\tolyan\ооп\class\24.06.2019\24.06.2019\car.h(10): error C2535: 'Color::Color(void)': member function already defined or declared
+  d:\tolyan\ооп\class\24.06.2019\24.06.2019\car.h(9): note: see declaration of 'Color::Color'
+d:\tolyan\ооп\class\24.06.2019\24.06.2019\car.h(33): error C2535: 'Kuzov::Kuzov(void)': member function already defined or declared
+  d:\tolyan\ооп\class\24.06.2019\24.06.2019\car.h(32): note: see declaration of 'Kuzov::Kuzov'
+d:\tolyan\ооп\class\24.06.2019\24.06.2019\car.cpp(21): error C2146: syntax error: missing ')' before identifier 'ColorCar'
+d:\tolyan\ооп\class\24.06.2019\24.06.2019\car.cpp(21): error C2146: syntax error: missing ';' before identifier 'ColorCar'
+d:\tolyan\ооп\class\24.06.2019\24.06.2019\car.cpp(21): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\tolyan\ооп\class\24.06.2019\24.06.2019\car.cpp(21): error C2062: type 'int' unexpected
+d:\tolyan\ооп\class\24.06.2019\24.06.2019\car.cpp(21): error C2059: syntax error: ')'
+d:\tolyan\ооп\class\24.06.2019\24.06.2019\car.cpp(21): error C2143: syntax error: missing ';' before '{'
+d:\tolyan\ооп\class\24.06.2019\24.06.2019\car.cpp(21): error C2447: '{': missing function header (old-style formal list?)
+  Source.cpp
+d:\tolyan\ооп\class\24.06.2019\24.06.2019\car.h(10): error C2535: 'Color::Color(void)': member function already defined or declared
+  d:\tolyan\ооп\class\24.06.2019\24.06.2019\car.h(9): note: see declaration of 'Color::Color'
+d:\tolyan\ооп\class\24.06.2019\24.06.2019\car.h(33): error C2535: 'Kuzov::Kuzov(void)': member function already defined or declared
+  d:\tolyan\ооп\class\24.06.2019\24.06.2019\car.h(32): note: see declaration of 'Kuzov::Kuzov'
+d:\tolyan\ооп\class\24.06.2019\24.06.2019\source.cpp(7): error C2039: 'FillingCar': is not a member of 'Car'
+  d:\tolyan\ооп\class\24.06.2019\24.06.2019\car.h(40): note: see declaration of 'Car'
+  Generating Code...
