@@ -8,11 +8,13 @@ SmartArray::SmartArray()
 	int col = 0;
 	int row = 0;
 }
-SmartArray::SmartArray(int value, int col, int row)
+SmartArray::SmartArray(int value, int col, int row) 
 {
-	arr = new int*[row];
+	arr = new int* [row];
+	arrSize = new int[row];
 	for (int i = 0; i < col; i++)
 	{
+		arrSize[i] = row;
 		arr[i] = new int[col];
 	}
 	for (int i = 0; i < row; i++)
@@ -21,7 +23,6 @@ SmartArray::SmartArray(int value, int col, int row)
 		{
 			arr[i][j] = value;
 			value++;
-			//this->arrSize[i] = row;
 		}
 	}
 	this->col = col;
@@ -33,14 +34,13 @@ SmartArray::~SmartArray()
 	{
 		delete[]arr[i];
 	}
-	//delete[]arrSize;
+	delete[]arrSize;
 }
 void SmartArray::Show()
 {
-	int g = 0;
-	for (int i = 0; i < row; i++, g++)
+	for (int i = 0; i < row; i++)
 	{
-		for (int j = 0; j < col; j++)
+		for (int j = 0; j < arrSize[i]; j++)
 		{
 			cout << arr[i][j] << "\t";
 		}
@@ -49,11 +49,14 @@ void SmartArray::Show()
 }
 void SmartArray::AddRow(int addArr[], int newRow)
 {
+	int* NewArrSize = new int[row + 1];
 	int ** newArr = new int*[row + 1];
 	for (int i = 0; i < row + 1; i++)
 	{
 		newArr[i] = new int[col];
+		NewArrSize[i] = arrSize[i];
 	}
+	NewArrSize[row + 1] = col;
 	for (int i = 0; i < newRow; i++)
 	{
 		newArr[i] = arr[i];
@@ -63,6 +66,7 @@ void SmartArray::AddRow(int addArr[], int newRow)
 	{
 		newArr[i + 1] = arr[i];
 	}
+	arrSize = NewArrSize;
 	/*for (int i = 0; i < row+1; i++)
 	{
 		for (int j = 0; j < col; j++)
@@ -105,30 +109,27 @@ void SmartArray::DeleteRow( int newRow)
 
 void SmartArray::DeleteElem(int NewCol, int NewRow)
 {
-	if (NewCol > col || NewRow > row) {
+	if (NewCol > col-1) {
 		cout << "Error" << endl;
 	}
-	else
+    else
 	{
-		int size, k = 0;
-		int** newArr = new int* [row];
-		for (int i = 0; i < row; i++)
-		{
-			if (NewRow != row)
-				newArr[i] = arr[i];
-			else
-			{
-				for (int j = col - 1; j >= 0; j--) {
-				
-					if (NewCol == col)
-					{
-						//delete[] * arrSize;
-					}
-					newArr[i][j] = newArr[i][j];
-				}
-			}
+		if (NewRow > row-1) {
+			cout << "Error" << endl;
 		}
-		
-		arr = newArr;
+		else{
+			int* newArr = new int [row - 1];
+			for (int i = 0; i < this->col; i++)
+			{
+				if (i >= NewCol)
+					newArr[i] = arr[NewRow][i + 1];
+				else
+					newArr[i] = arr[NewRow][i];
+			}
+			for (int i = 0; i < col; i++) {
+				arr[NewRow][i] = newArr[i];
+			}
+			arrSize[NewRow] = col - 1;
+		}
 	}
 }

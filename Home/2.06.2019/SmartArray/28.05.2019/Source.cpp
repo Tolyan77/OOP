@@ -15,14 +15,17 @@ int main()
 	arr.AddRow(arr1, 1);
 	cout << endl;
 	arr.Show();
-	cout << "++++++++++++++++++++" << endl;
+	/*cout << "++++++++++++++++++++" << endl;
 	arr.DeleteRow(1);
+	arr.Show();*/
+
+
+
+	int MyCol, MyRow;
+	cout << "Enter col :"; cin >> MyCol;
+	cout << "Enter row :"; cin >> MyRow;
+	arr.DeleteElem(MyCol, MyRow);
 	arr.Show();
-	//int col, row;
-	//cout << "Enter col :"; cin >> col;
-	//cout << "Enter row :"; cin >> row;
-	//arr.DeleteElem(col, row);
-//	arr.Show();
 
 
 	system("pause");
