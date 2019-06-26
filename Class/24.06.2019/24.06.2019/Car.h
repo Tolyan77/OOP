@@ -1,7 +1,7 @@
 #pragma once
 #include<iostream>
 #include<string.h>
-using namespace MySpace;
+using namespace std;
 
 class Color {
 private:
