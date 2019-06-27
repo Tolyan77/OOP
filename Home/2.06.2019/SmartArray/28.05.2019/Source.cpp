@@ -3,22 +3,28 @@
 using namespace std;
 int main()
 {
-	/*int * arr1 = new int[3];
+	int * arr1 = new int[3];
 	for (int i = 0; i < 3; i++)
 	{
 		arr1[i] = 2;
-	}*/
+	}
 	SmartArray arr(1, 3, 3);
-
-	/*arr.Show();
+	cout << "++++++++++++++++++++" << endl;
+	arr.Show();
+	cout << "++++++++++++++++++++" << endl;
 	arr.AddRow(arr1, 1);
 	cout << endl;
-	arr.Show();*/
 	arr.Show();
-	int col, row;
-	cout << "Enter col :"; cin >> col;
-	cout << "Enter row :"; cin >> row;
-	arr.DeleteElem(col, row);
+	/*cout << "++++++++++++++++++++" << endl;
+	arr.DeleteRow(1);
+	arr.Show();*/
+
+
+
+	int MyCol, MyRow;
+	cout << "Enter col :"; cin >> MyCol;
+	cout << "Enter row :"; cin >> MyRow;
+	arr.DeleteElem(MyCol, MyRow);
 	arr.Show();
 
 
