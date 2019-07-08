@@ -34,7 +34,7 @@ SmartArray::~SmartArray()
 	{
 		delete[]arr[i];
 	}
-	delete[]arrSize;
+	//delete[]arrSize;
 }
 void SmartArray::Show()
 {
@@ -90,6 +90,29 @@ for (int i = 0; i < row+1; i++)
 }*/
 	arr = newArr;
 	this->row++;
+}
+
+void SmartArray::AddElem(int NewCol, int NewRow,int NewNumber)
+{
+	if (NewCol > col - 1) {
+		cout << "Error" << endl;
+	}
+	else
+	{
+	  int* newArr = new int[row + 1];
+	  for (int i = 0; i < this->col; i++)
+	  {
+		  if (i >= NewCol)
+			  newArr[i + 1] = arr[NewRow][i];
+		  else
+			  newArr[i] = arr[NewRow][i];
+	  }
+	  newArr[NewRow] = NewNumber;
+	  for (int i = 0; i < col + 1; i++) {
+		  arr[NewRow][i] = newArr[i];
+	  }
+	  arrSize[NewRow] = col + 1;
+	}
 }
 
 void SmartArray::DeleteRow( int newRow)
