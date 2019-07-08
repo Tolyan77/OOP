@@ -1,0 +1,4 @@
+﻿  Source.cpp
+d:\tolyan\c++\ооп\class\08.07.2019 fstream\08.07.2019 fstream\source.cpp(22): error C2065: 'car': undeclared identifier
+d:\tolyan\c++\ооп\class\08.07.2019 fstream\08.07.2019 fstream\source.cpp(24): error C2065: 'car': undeclared identifier
+d:\tolyan\c++\ооп\class\08.07.2019 fstream\08.07.2019 fstream\source.cpp(25): error C2065: 'car': undeclared identifier
